@@ -1,0 +1,27 @@
+# Archivos del proyecto de Vivado
+*.xpr
+*.xpr.lock
+
+# Archivos de salida de compilación
+*.bit
+*.dcp
+*.xsa
+*.rpt
+*.v
+*.vhd
+
+# Logs y reportes
+*.log
+*.jou
+
+# Carpetas generadas por Vivado
+.cache/
+.hw/
+.ip_user_files/
+.sim/
+.runs/
+.Xil/
+
+# Otros archivos temporales y de backup
+*.backup
+*.tmp

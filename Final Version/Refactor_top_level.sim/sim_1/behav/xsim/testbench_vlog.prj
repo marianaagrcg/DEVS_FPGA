@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../Xilinx/2025.1/data/rsb/busdef" \
+"../../../../Refactor_top_level.srcs/sources_1/new/coordinator.v" \
+"../../../../Refactor_top_level.srcs/sources_1/new/root_coordinator.v" \
+"../../../../Refactor_top_level.srcs/sources_1/new/simulator.v" \
+"../../../../Refactor_top_level.srcs/sources_1/new/top_level.v" \
+"../../../../Refactor_top_level.srcs/sim_1/new/testbench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

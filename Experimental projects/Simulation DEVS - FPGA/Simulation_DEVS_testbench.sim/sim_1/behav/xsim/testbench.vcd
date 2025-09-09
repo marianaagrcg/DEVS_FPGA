@@ -1,0 +1,251 @@
+$date
+   Mon Aug 18 17:43:26 2025
+$end
+
+$version
+  2025.1.0
+  $dumpfile ("testbench.vcd") 
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module testbench $end
+$var reg 1 ! clk $end
+$var reg 1 " rst_n $end
+$var reg 1 # start_sim_in $end
+$var wire 1 $ done_out $end
+$var wire 1 % at_w $end
+$var wire 1 & q_w $end
+$var wire 1 ' done_s_w $end
+$scope module RC_inst $end
+$var wire 1 ( clk $end
+$var wire 1 ) rst_n $end
+$var wire 1 * start_sim_in $end
+$var wire 1 $ done_out $end
+$var wire 1 + at_w $end
+$var wire 1 , q_w $end
+$var wire 1 - done_s_w $end
+$var wire 1 . done_c_w $end
+$scope module CM_inst $end
+$var wire 1 ( clk $end
+$var wire 1 ) rst_n $end
+$var wire 1 * start_in $end
+$var wire 1 - done_in $end
+$var reg 1 / at_out $end
+$var reg 1 0 q_out $end
+$var reg 1 1 done_out $end
+$var reg 3 2 state [2:0] $end
+$var reg 3 3 next_state [2:0] $end
+$upscope $end
+$scope module AM_inst $end
+$var wire 1 ( clk $end
+$var wire 1 ) rst_n $end
+$var wire 1 + at_in $end
+$var wire 1 , q_in $end
+$var reg 1 4 done_out $end
+$var reg 2 5 state [1:0] $end
+$var reg 2 6 next_state [1:0] $end
+$var reg 2 7 counter [1:0] $end
+$var reg 1 8 next_done_out $end
+$var reg 2 9 next_counter [1:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+0"
+x#
+0$
+0%
+0&
+0'
+0(
+0)
+x*
+0+
+0,
+0-
+0.
+0/
+00
+01
+b0 2
+b0 3
+04
+b0 5
+b0 6
+b0 7
+08
+b0 9
+$end
+
+#10000
+1!
+1(
+
+#20000
+0!
+1"
+0(
+1)
+
+#30000
+1!
+1(
+
+#40000
+0!
+1#
+0(
+1*
+b1 3
+
+#50000
+1!
+1%
+1(
+1+
+1/
+b1 2
+b10 3
+b1 6
+
+#60000
+0!
+0#
+0(
+0*
+1/
+b10 3
+
+#70000
+1!
+0%
+1(
+0+
+0/
+b10 2
+b1 5
+b1 9
+
+#80000
+0!
+0(
+
+#90000
+1!
+1(
+b0 6
+b1 7
+18
+
+#100000
+0!
+0(
+
+#110000
+1!
+1'
+1(
+1-
+b11 3
+14
+b0 5
+08
+
+#120000
+0!
+0(
+
+#130000
+1!
+1&
+0'
+1(
+1,
+0-
+10
+b11 2
+b100 3
+04
+b10 6
+b0 9
+
+#140000
+0!
+0(
+
+#150000
+1!
+0&
+1(
+0,
+00
+b100 2
+b10 5
+b0 6
+b0 7
+18
+
+#160000
+0!
+0(
+
+#170000
+1!
+1'
+1(
+1-
+b101 3
+14
+b0 5
+08
+
+#180000
+0!
+0(
+
+#190000
+1!
+1$
+0'
+1(
+0-
+1.
+11
+b101 2
+b0 3
+04
+
+#200000
+0!
+0(
+
+#210000
+1!
+0$
+1(
+0.
+01
+b0 2
+
+#220000
+0!
+0(
+
+#230000
+1!
+1(
+
+#240000
+0!
+0(
+
+#250000
+1!
+1(

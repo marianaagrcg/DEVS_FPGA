@@ -1,0 +1,10 @@
+0.7
+2020.2
+May 21 2025
+22:59:56
+/home/intern/FPGA_Projects/top_level_implementation.sim/sim_1/behav/xsim/glbl.v,1741209010,verilog,,,,glbl,,,,,,,,
+/home/intern/FPGA_Projects/top_level_implementation.srcs/sim_1/new/testbench.v,1756240958,verilog,,/home/intern/FPGA_Projects/top_level_implementation.srcs/sources_1/new/top_level.v,,test_top_level,,,../../../../../Xilinx/2025.1/data/rsb/busdef,,,,,
+/home/intern/FPGA_Projects/top_level_implementation.srcs/sources_1/new/coordinator.v,1756238777,verilog,,/home/intern/FPGA_Projects/top_level_implementation.srcs/sources_1/new/root_coordinator.v,,coordinator,,,../../../../../Xilinx/2025.1/data/rsb/busdef,,,,,
+/home/intern/FPGA_Projects/top_level_implementation.srcs/sources_1/new/root_coordinator.v,1756238777,verilog,,/home/intern/FPGA_Projects/top_level_implementation.srcs/sources_1/new/simulator.v,,root_coordinator,,,../../../../../Xilinx/2025.1/data/rsb/busdef,,,,,
+/home/intern/FPGA_Projects/top_level_implementation.srcs/sources_1/new/simulator.v,1756238777,verilog,,/home/intern/FPGA_Projects/top_level_implementation.srcs/sim_1/new/testbench.v,,simulator,,,../../../../../Xilinx/2025.1/data/rsb/busdef,,,,,
+/home/intern/FPGA_Projects/top_level_implementation.srcs/sources_1/new/top_level.v,1756237073,verilog,,/home/intern/FPGA_Projects/top_level_implementation.srcs/sim_1/new/testbench.v,,top_level,,,../../../../../Xilinx/2025.1/data/rsb/busdef,,,,,

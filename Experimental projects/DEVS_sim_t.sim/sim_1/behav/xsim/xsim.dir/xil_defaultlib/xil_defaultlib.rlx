@@ -1,0 +1,9 @@
+0.7
+2020.2
+May 21 2025
+22:59:56
+/home/intern/FPGA_Projects/DEVS_sim_t.sim/sim_1/behav/xsim/glbl.v,1741209010,verilog,,,,glbl,,,,,,,,
+/home/intern/FPGA_Projects/DEVS_sim_t.srcs/sim_1/new/testbench.v,1755798655,verilog,,,,testbench,,,../../../../../Xilinx/2025.1/data/rsb/busdef,,,,,
+/home/intern/FPGA_Projects/DEVS_sim_t.srcs/sources_1/new/coordinator.v,1755722100,verilog,,/home/intern/FPGA_Projects/DEVS_sim_t.srcs/sources_1/new/root_coordinator.v,,coordinator,,,../../../../../Xilinx/2025.1/data/rsb/busdef,,,,,
+/home/intern/FPGA_Projects/DEVS_sim_t.srcs/sources_1/new/root_coordinator.v,1755794666,verilog,,/home/intern/FPGA_Projects/DEVS_sim_t.srcs/sources_1/new/simulator.v,,root_coordinator,,,../../../../../Xilinx/2025.1/data/rsb/busdef,,,,,
+/home/intern/FPGA_Projects/DEVS_sim_t.srcs/sources_1/new/simulator.v,1755798072,verilog,,/home/intern/FPGA_Projects/DEVS_sim_t.srcs/sim_1/new/testbench.v,,simulator,,,../../../../../Xilinx/2025.1/data/rsb/busdef,,,,,

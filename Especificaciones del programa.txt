@@ -1,0 +1,59 @@
+Especificaciones del programa
+Toma en cuenta The Parallel DEVS formalism y the abstract simulator
+El principal proposito de esto es poder adaptar el formalismo DEVS en una FPGA. Lo que busco realizar es simular DEVS en esta FPGA.
+
+Consideraciones:
+	Reloj de 50mhz 
+
+WP = WIDTH_PORT
+WT = WIDTH_TIME
+
+SIMULATOR:
+	inputs: [x[WP], @[WT], *[WT], clk, rst]
+	outputs: [y[WP], done[WT]]
+	registers: [tn[WT], tL[WT], fifo x [port][5]]
+	
+	x: a set of input events
+	y: a set of output events
+	
+	el simulator sigue la logica:
+	
+	always @(at) begin
+	    if(at >= tn) begin
+	        do λ (2 ciclos)
+	    end
+	    done = @
+	end
+	
+	always @(*) begin
+	    do δ (2 ciclos)
+	    tL = *;
+	    tn = * + 1;
+	    done = tn;
+	end
+	
+COORDINATOR:
+	inputs: [step[WT], done_I[WT], clk, rst]
+	outputs: [@[WT], *[WT], done_O[WT]]
+	
+	el coordinator sigue la logica: 
+	
+	always @(step) begin
+	    @ = step
+	    wait for all done_I
+	    * = step
+	    wait for all done _I
+	    done_O = min(done_I)
+	end
+	
+ROOT_COORDINATOR:
+	inputs: [done, clk, rst]
+	outputs: [step]
+	
+	el root_coordinator sigue la logica:
+	
+	assign step = done
+
+TEST_BENCH:
+-Realizar un testbench para poder hacer un Behavioral Simulation del programa.
+-Incluir logs para poder observar de manera detallada el 			comportamiento del sistema en la consola, que se vea el registro de tiempo y de eventos.
