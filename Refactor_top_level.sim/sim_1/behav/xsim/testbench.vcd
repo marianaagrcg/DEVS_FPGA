@@ -1,0 +1,277 @@
+$date
+   Fri Aug 29 15:26:55 2025
+$end
+
+$version
+  2025.1.0
+  $dumpfile ("testbench.vcd") 
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module testbench $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var reg 8 # x_in_tb [7:0] $end
+$var wire 8 $ y_out_tb [7:0] $end
+$var wire 8 % done_out_tb [7:0] $end
+$scope module dut $end
+$var wire 1 & clk $end
+$var wire 1 ' rst $end
+$var wire 8 ( x_in_tb [7:0] $end
+$var wire 8 $ y_out_tb [7:0] $end
+$var wire 8 % done_out_tb [7:0] $end
+$var wire 8 ) at_w [7:0] $end
+$var wire 8 * star_w [7:0] $end
+$var wire 8 + step_w [7:0] $end
+$var wire 8 , done_simulator_w [7:0] $end
+$var wire 8 - done_coordinator_w [7:0] $end
+$scope module dut_root_coord $end
+$var wire 8 - done [7:0] $end
+$var wire 1 & clk $end
+$var wire 1 ' rst $end
+$var wire 8 + step [7:0] $end
+$upscope $end
+$scope module dut_coord $end
+$var wire 8 + step [7:0] $end
+$var wire 8 , done_I [7:0] $end
+$var wire 1 & clk $end
+$var wire 1 ' rst $end
+$var reg 8 . at [7:0] $end
+$var reg 8 / star [7:0] $end
+$var reg 8 0 done_O [7:0] $end
+$var reg 1 1 received_done_I $end
+$upscope $end
+$scope module dut_sim $end
+$var wire 8 ( x [7:0] $end
+$var wire 8 ) at [7:0] $end
+$var wire 8 * star [7:0] $end
+$var wire 1 & clk $end
+$var wire 1 ' rst $end
+$var reg 8 2 y [7:0] $end
+$var reg 8 3 done [7:0] $end
+$var reg 8 4 tn [7:0] $end
+$var reg 8 5 tL [7:0] $end
+$var reg 3 6 fifo_head [2:0] $end
+$var reg 3 7 fifo_tail [2:0] $end
+$var reg 1 8 fifo_empty $end
+$var reg 1 9 fifo_full $end
+$var reg 8 : fifo_peek_val [7:0] $end
+$var reg 2 ; state [1:0] $end
+$var reg 2 < cycle_count [1:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+1"
+b0 #
+b0 $
+b0 %
+0&
+1'
+b0 (
+b0 )
+b0 *
+b1 +
+b0 ,
+b0 -
+b0 .
+b0 /
+b0 0
+01
+b0 2
+b0 3
+b0 4
+b0 5
+b0 6
+b0 7
+18
+09
+b0 :
+b0 ;
+b0 <
+$end
+
+#10000
+1!
+1&
+
+#20000
+0!
+0"
+0&
+0'
+
+#30000
+1!
+1&
+b1 )
+b1 .
+
+#40000
+0!
+b10101010 #
+0&
+b10101010 (
+
+#50000
+1!
+1&
+b1 7
+08
+
+#60000
+0!
+0&
+
+#70000
+1!
+1&
+b1 6
+b10 7
+18
+b10101010 :
+b1 ;
+
+#80000
+0!
+b10111011 #
+0&
+b10111011 (
+
+#90000
+1!
+1&
+b1 <
+
+#100000
+0!
+0&
+
+#110000
+1!
+b10101010 $
+b1 %
+1&
+b1 ,
+b10101010 2
+b1 3
+b0 ;
+
+#120000
+0!
+0&
+
+#130000
+1!
+b0 %
+1&
+b0 ,
+11
+b0 3
+b11 7
+08
+
+#140000
+0!
+b0 #
+0&
+b0 (
+
+#150000
+1!
+1&
+b10 6
+b1 ;
+b0 <
+
+#160000
+0!
+0&
+
+#170000
+1!
+1&
+b1 <
+
+#180000
+0!
+0&
+
+#190000
+1!
+b1 %
+1&
+b1 ,
+b1 3
+b0 ;
+
+#200000
+0!
+0&
+
+#210000
+1!
+b0 %
+1&
+b1 *
+b10 +
+b0 ,
+b1 -
+b1 /
+b1 0
+b0 3
+b11 6
+18
+b10111011 :
+b1 ;
+b0 <
+
+#220000
+0!
+0&
+
+#230000
+1!
+1&
+b10 )
+b0 *
+b1 +
+b0 -
+b10 .
+b0 /
+b0 0
+01
+b1 <
+
+#240000
+0!
+0&
+
+#250000
+1!
+b10111011 $
+b10 %
+1&
+b10 ,
+b10111011 2
+b10 3
+b0 ;
+
+#260000
+0!
+0&
+
+#270000
+1!
+b0 %
+1&
+b0 ,
+11
+b0 3

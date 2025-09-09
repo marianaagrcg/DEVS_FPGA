@@ -1,0 +1,22 @@
+# Archivos innecesarios de Vivado
+*.jou
+*.log
+*.str
+*.rpx
+*.html
+*.xml
+*.xpr
+*.xsa
+*.xpr.lock
+
+# Carpetas generadas automáticamente
+.cache/
+.hw/
+.ip_user_files/
+.sim/
+.runs/
+.Xil/
+
+# Otros temporales
+*.tmp
+*.backup
