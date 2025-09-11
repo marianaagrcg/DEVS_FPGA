@@ -31,6 +31,14 @@ A custom, modular architecture was developed to simulate DEVS behavior directly 
 * **Coordinator**: This is the "brain" of the design. It synchronizes multiple simulators, receiving "done" signals and providing the next simulation step to all connected modules.
 * **Root Coordinator**: The entry point for the entire simulation. It provides the initial step signal and manages the overall simulation flow based on the final "done" signal from the main coordinator.
 
+### Schematic
+
+![Schematic of the desing](Images/Schematic.png)
+
+### Oganization  
+
+![FIles organization](Images/Organization.png)
+
 ### Design Validation
 
 The entire circuit was validated using a comprehensive **testbench** to observe the system's behavior in detail. This approach allowed for thorough observation of input and output events, ensuring that the DEVS logic was correctly translated and processed in the hardware.
