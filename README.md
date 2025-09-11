@@ -23,7 +23,8 @@ Implementing DEVS on an FPGA provides significant advantages over a software-bas
 
 ---
 
-## Schematic
+## DEVS-on-FPGA Design
+### Schematic
 
 The diagram illustrates the **top-level schematic** of the DEVS-on-FPGA implementation, showing the modular and hierarchical design. The system is composed of three primary components interconnected with their respective inputs and outputs.
 
@@ -35,13 +36,13 @@ The diagram illustrates the **top-level schematic** of the DEVS-on-FPGA implemen
 
 ---
 
-## Design Validation
+### Design Validation
 
 The entire circuit was validated using a comprehensive **testbench** to observe the system's behavior in detail. This approach allowed for thorough observation of input and output events, ensuring that the DEVS logic was correctly translated and processed in the hardware.
 
 ---
 
-## Organization
+### Organization
 
 The following image shows the file organization and a view of the simulation scope within the Vivado environment. It provides a hierarchical representation of the project's components and their corresponding signals during a testbench-driven simulation.
 
