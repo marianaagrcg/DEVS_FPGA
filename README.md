@@ -46,7 +46,9 @@ The entire circuit was validated using a comprehensive **testbench** to observe 
 
 The following image shows the file organization and a view of the simulation scope within the Vivado environment. It provides a hierarchical representation of the project's components and their corresponding signals during a testbench-driven simulation.
 
-![Files organization](Images/Organization.png)
+<p align="center">
+  <img src="Images/Organization.png" alt="Files organization"/>
+</p>
 
 The **`Scope`** pane on the left shows the hierarchy of the design, with `top_level` acting as the **Design Under Test (DUT)**. You can see how the `dut_root_coord`, `dut_coord`, and `dut_sim` modules are instantiated within `top_level`, demonstrating the modular structure.
 
