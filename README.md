@@ -24,12 +24,17 @@ Implementing DEVS on an FPGA provides significant advantages over a software-bas
 ---
 
 ## DEVS-on-FPGA Design
+### Schematic
 
-A custom, modular architecture was developed to simulate DEVS behavior directly in hardware. The entire logic is encapsulated within a top-level module, composed of the following key components:
+The diagram illustrates the **top-level schematic** of the DEVS-on-FPGA implementation, showing the modular and hierarchical design. The system is composed of three primary components interconnected with their respective inputs and outputs.
 
-* **Simulator**: The core of the design, which emulates a single **atomic DEVS model**. It is responsible for processing input events and generating output events while managing its internal state.
-* **Coordinator**: This is the "brain" of the design. It synchronizes multiple simulators, receiving "done" signals and providing the next simulation step to all connected modules.
-* **Root Coordinator**: The entry point for the entire simulation. It provides the initial step signal and manages the overall simulation flow based on the final "done" signal from the main coordinator.
+![Schematic of the design](Images/Schematic.png)
+
+* **`dut_root_coord` (Root Coordinator):** This module acts as the entry point for the entire simulation. It initiates the process by sending a `step` signal and receives a final `done` signal to indicate the end of the simulation cycle.
+* **`dut_coord` (Coordinator):** The central hub of the design, this module manages the execution flow. It synchronizes the `done` signals from the connected simulators and, based on their status, provides the next `step` signal to advance the simulation.
+* **`dut_sim` (Simulator):** This core component emulates a single **atomic DEVS model**. It is responsible for processing input events (`x`), generating output events (`y`), and updating its internal state based on control signals from the `coordinator`.
+
+---
 
 ### Design Validation
 
@@ -37,11 +42,55 @@ The entire circuit was validated using a comprehensive **testbench** to observe 
 
 ---
 
-## Repository Organization
+### Organization
 
-This repository is organized to provide a clear view of the project's development journey, from early experiments to the final design.
+The following image shows the file organization and a view of the simulation scope within the Vivado environment. It provides a hierarchical representation of the project's components and their corresponding signals during a testbench-driven simulation.
 
-* `Experimental projects/`: Contains all the development versions created to experiment with and validate different logical approaches before arriving at the final design.
-* `Final Version/`: The final, presented version of the DEVS-on-FPGA project. This represents the stable and validated design.
-* `Practical Projects/`: Includes small, practical exercises created to help understand Verilog logic, the Vivado workflow, and interactions with the FPGA board.
+<p align="center">
+  <img src="Images/Organization.png" alt="Files organization"/>
+</p>
+
+The **`Scope`** pane on the left shows the hierarchy of the design, with `top_level` acting as the **Design Under Test (DUT)**. You can see how the `dut_root_coord`, `dut_coord`, and `dut_sim` modules are instantiated within `top_level`, demonstrating the modular structure.
+
+The **`Objects`** pane on the right lists the key signals and variables within the selected scope. The values shown represent the current state of the signals during the simulation run. These objects are crucial for debugging and validating the design.
+
+* `clk` and `rst`: The clock and reset signals for the entire system.
+* `x_in_tb[7:0]` and `y_out_tb[7:0]`: The input and output event buses, as driven and observed by the testbench.
+* `at_w[7:0]` and `star_w[7:0]`: Internal state variables representing `@` and `*` as described in DEVS theory, managed by the coordinator.
+* `step_w[7:0]` and `done_simulator_w[7:0]`: Signals used by the coordinator to control the simulation flow and receive feedback from the simulators.
+
+This view confirms that the **testbench** is correctly interacting with the **top-level** module and that the internal signals are behaving as expected according to the DEVS simulation logic.
+
+---
+
+## Repository Structure
+
+This repository is organized to provide a clear view of the project's development journey, from early experiments to the final, validated design.
+
+* `Experimental projects/`: This directory contains various development versions created during the design phase. It includes initial logical experiments and proofs of concept that led to the final architecture.
+* `Final Version/`: The final, presented version of the DEVS-on-FPGA project. This represents the stable and validated design, including the final Verilog source files.
+* `Practical Projects/`: Includes small, practical exercises created to help understand fundamental Verilog logic, the Vivado workflow, and interactions with the FPGA board.
 * `Waves Behavioral Simulations/`: Stores the waveform files generated during behavioral simulations, which were used to debug and verify the design's functionality.
+
+---
+
+## Workflow and Requirements
+
+This repository is used solely for **version control and code documentation**. While you can browse and edit the source code here, **Vivado is an essential tool** for the project's development and use.
+
+### Why Vivado is Required
+
+**Vivado** is a complete software suite developed by Xilinx for the synthesis and analysis of HDL (Hardware Description Language) designs. It is the only way to:
+* **Synthesize** the Verilog code into a netlist (the hardware schematic).
+* **Implement** the design to place and route it on a specific FPGA device.
+* **Generate a bitstream** file (.bit), which is the final configuration file used to program the FPGA.
+* **Run simulations** with the built-in simulator to verify the design's behavior and validate the hardware's functionality.
+
+### How to Install Vivado
+
+You can download and install Vivado from the official AMD/Xilinx website.
+
+1.  Go to the **[AMD/Xilinx Downloads page](https://www.xilinx.com/support/download.html)**.
+2.  Select the **Vivado** section and choose the latest version of the "Unified Installer".
+3.  Follow the installation wizard. During the process, select the **"Vivado"** product and the specific FPGA family you will be using (e.g., Artix-7, Kintex-7, etc.) to minimize the installation size.
+4.  After the installation is complete, you will need a license. A free license called the **"Vivado ML Standard Edition"** is available and sufficient for most hobbyist and academic projects. You can generate this license within the Vivado License Manager.
