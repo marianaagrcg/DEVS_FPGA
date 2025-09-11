@@ -45,3 +45,26 @@ This repository is organized to provide a clear view of the project's developmen
 * `Final Version/`: The final, presented version of the DEVS-on-FPGA project. This represents the stable and validated design.
 * `Practical Projects/`: Includes small, practical exercises created to help understand Verilog logic, the Vivado workflow, and interactions with the FPGA board.
 * `Waves Behavioral Simulations/`: Stores the waveform files generated during behavioral simulations, which were used to debug and verify the design's functionality.
+
+---
+
+## Workflow and Requirements
+
+This repository is used solely for **version control and code documentation**. While you can browse and edit the source code here, **Vivado is an essential tool** for the project's development and use.
+
+### Why Vivado is Required
+
+**Vivado** is a complete software suite developed by Xilinx for the synthesis and analysis of HDL (Hardware Description Language) designs. It is the only way to:
+* **Synthesize** the Verilog code into a netlist (the hardware schematic).
+* **Implement** the design** to place and route it on a specific FPGA device.
+* **Generate a bitstream** file (.bit), which is the final configuration file used to program the FPGA.
+* **Run simulations** with the built-in simulator to verify the design's behavior and validate the hardware's functionality.
+
+### How to Install Vivado
+
+You can download and install Vivado from the official AMD/Xilinx website.
+
+1.  Go to the **[AMD/Xilinx Downloads page](https://www.xilinx.com/support/download.html)**.
+2.  Select the **Vivado** section and choose the latest version of the "Unified Installer".
+3.  Follow the installation wizard. During the process, select the **"Vivado"** product and the specific FPGA family you will be using (e.g., Artix-7, Kintex-7, etc.) to minimize the installation size.
+4.  After the installation is complete, you will need a license. A free license called the **"Vivado ML Standard Edition"** is available and sufficient for most hobbyist and academic projects. You can generate this license within the Vivado License Manager.
